@@ -2,9 +2,9 @@ import * as React from "react";
 
 import styled from "styled-components";
 
-const Index = () => <Hello>Hello Jerry</Hello>;
+const Index = () => <Hello>Dom Germano</Hello>;
 
-const Hello = styled.div`
+const Hello = styled.p`
   color: red;
 `;
 
