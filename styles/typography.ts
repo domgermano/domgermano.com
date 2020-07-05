@@ -25,7 +25,7 @@ export const typography = {
     fontFamily: "minion-pro",
     fontSize: "1.25rem",
     fontWeight: "400",
-    lineHeight: "1.75",
+    lineHeight: "1.4",
     paddingTop: "0px",
     paddingBottom: "0px",
     textTransform: "initial",
@@ -36,7 +36,7 @@ export const typography = {
     fontFamily: "felt-tip-roman",
     fontSize: "1.25rem",
     fontWeight: "400",
-    lineHeight: "1.75",
+    lineHeight: "1.4",
     paddingTop: "0px",
     paddingBottom: "0px",
     textTransform: "uppercase",
@@ -46,12 +46,12 @@ export const typography = {
   system: {
     fontFamily: "acumin-pro-condensed",
     fontSize: "0.875rem",
-    fontWeight: "800",
+    fontWeight: "700",
     lineHeight: "1.4",
     paddingTop: "0px",
     paddingBottom: "0px",
     textTransform: "uppercase",
-    letterSpacing: "4px",
+    letterSpacing: "5px",
     element: "p"
   }
 };
