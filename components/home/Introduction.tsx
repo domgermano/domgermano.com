@@ -31,6 +31,7 @@ const fade = keyframes`
 
 export const Introduction = () => (
   <Section>
+    <Spacer spacing={80} />
     <Grid>
       <GridHi kind="display">Hi, my name's</GridHi>
       <GridName>
@@ -115,6 +116,9 @@ const GridVideo = styled.video`
   grid-column: 1 / span 12;
   width: 100%;
   margin-top: 40px;
+
+  animation: ${fade} 1s ease backwards;
+  animation-delay: 1.5s;
 `;
 
 const GridStory = styled.div`

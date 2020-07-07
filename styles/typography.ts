@@ -34,7 +34,7 @@ export const typography = {
   },
   hand: {
     fontFamily: "felt-tip-roman",
-    fontSize: "1.25rem",
+    fontSize: "1rem",
     fontWeight: "400",
     lineHeight: "1.4",
     paddingTop: "0px",
