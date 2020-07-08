@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colors } from "styles/colors";
 
 import normalise from "./normalise";
 
@@ -6,7 +7,7 @@ export const CssBaseline = createGlobalStyle`
  ${normalise}
 
  *::selection {
-  background: #FDEBE2;
+  background: ${colors.orange200};
  }
  
  html {

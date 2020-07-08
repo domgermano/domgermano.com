@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { colors } from "styles/colors";
 import { typography } from "styles/typography";
 
+/**
+ * TODO:
+ *   1. Add onClick props
+ *
+ */
+
 export const Button = styled.button`
   font-family: ${typography["system"].fontFamily};
   font-size: ${typography["system"].fontSize};
@@ -10,16 +16,18 @@ export const Button = styled.button`
   text-transform: ${typography["system"].textTransform};
   letter-spacing: ${typography["system"].letterSpacing};
 
-  padding: 10px 30px;
+  padding: 15px 50px;
   border: 1px solid ${colors.black200};
-  border-radius: 2px;
+  border-radius: 5px;
   box-sizing: border-radius;
-  background: transparent;
+  background: ${colors.orange200};
 
   cursor: pointer;
+  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: ${colors.black200};
-    color: white;
+    color: ${colors.orange200};
   }
 `;

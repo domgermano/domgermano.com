@@ -2,9 +2,16 @@ import * as React from "react";
 
 import Head from "next/head";
 
-export const HtmlHead = () => (
+interface Props {
+  videoSrc?: string;
+}
+
+export const HtmlHead = (props: Props) => (
   <Head>
     {/* Import Acumin and Miller from Adobe Fonts API */}
     <link rel="stylesheet" href="https://use.typekit.net/hun7wbf.css" />
+    {props.videoSrc && (
+      <link rel="preload" href={props.videoSrc} as="video" type="video/mp4" />
+    )}
   </Head>
 );

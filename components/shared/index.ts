@@ -3,6 +3,7 @@ export { Button } from "./Button";
 export { Colored } from "./Colored";
 export { Divider } from "./Divider";
 export { Flex, Box } from "./Flex";
+export { Footer } from "./Footer";
 export { Grid } from "./Grid";
 export { Header } from "./Header/Header";
 export { HtmlHead } from "./HtmlHead";

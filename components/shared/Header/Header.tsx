@@ -11,47 +11,43 @@ import { usePinnedHeader } from "./usePinnedHeader";
 export const Header = () => {
   let pin = usePinnedHeader();
   return (
-    <Container pin={pin}>
-      <Block>
-        <Flex align="center" justify="space-between">
-          <Box>
-            <Flex align="center">
-              <Logo />
-              <Text kind="hand">Dom Germano</Text>
-            </Flex>
-          </Box>
-          <Flex>
-            <IconButton
-              icon="/icons/dribbble.png"
-              href="https://dribbble.com/dom_germano"
-              marginRight={20}
-            />
-            <IconButton
-              icon="/icons/github.png"
-              href="https://github.com/domgermano"
-              marginRight={20}
-            />
-            <IconButton
-              icon="/icons/mail.png"
-              href="mailto:dg3rmano@gmail.com"
-            />
+    <Container pin={pin} as="header">
+      <Flex width="100%" align="center" justify="space-between">
+        <Box>
+          <Flex align="center">
+            <Logo />
+            <Text kind="hand">Dom Germano</Text>
           </Flex>
+        </Box>
+        <Flex>
+          <IconButton
+            icon="/icons/dribbble.png"
+            href="https://dribbble.com/dom_germano"
+            marginRight={20}
+          />
+          <IconButton
+            icon="/icons/github.png"
+            href="https://github.com/domgermano"
+            marginRight={20}
+          />
+          <IconButton icon="/icons/mail.png" href="mailto:dg3rmano@gmail.com" />
         </Flex>
-      </Block>
+      </Flex>
     </Container>
   );
 };
 
-const Container = styled.header<{ pin: boolean }>`
+const Container = styled(Block)<{ pin: boolean }>`
   display: flex;
-  height: 60px;
+  align-items: center;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
   background: hsla(0, 0%, 100%, 0.9);
   backdrop-filter: blur(8px);
 
-  transform: ${p => (p.pin ? "translateY(0px)" : "translateY(-60px)")};
+  transform: ${p => (p.pin ? "translateY(0px)" : "translateY(-100px)")};
   transition: transform 0.3s ease;
 
   z-index: 10;

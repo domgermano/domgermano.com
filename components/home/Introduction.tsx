@@ -11,6 +11,12 @@ import {
 } from "components/shared";
 import styled, { keyframes } from "styled-components";
 
+/**
+ * TODO:
+ *   1. Document
+ *   2. Add poster to the video
+ */
+
 const draw = keyframes`
   from {
     transform: scaleX(0);
