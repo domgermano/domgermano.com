@@ -1,3 +1,4 @@
+import { Contact, ContactProvider } from "components/shared";
 import { CssBaseline } from "components/shared/CssBaseline";
 import App from "next/app";
 
@@ -7,7 +8,10 @@ export default class MyAPP extends App {
     return (
       <>
         <CssBaseline />
-        <Component {...pageProps} />
+        <ContactProvider>
+          <Contact />
+          <Component {...pageProps} />
+        </ContactProvider>
       </>
     );
   }

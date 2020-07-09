@@ -58,7 +58,14 @@ export const Introduction = () => (
         <Spacer spacing={20} />
         <Button>Get in touch</Button>
       </GridDesc>
-      <GridVideo src="/home/portrait.mp4" muted autoPlay loop></GridVideo>
+      <GridVideo
+        id="video"
+        poster="/home/poster.jpg"
+        src="/home/portrait.mp4"
+        muted
+        autoPlay
+        loop
+      ></GridVideo>
       <GridStory>
         <Text kind="paragraph">
           I’m not a vein person, I swear. But if you’re a designer like me,

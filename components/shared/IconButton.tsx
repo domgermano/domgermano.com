@@ -18,6 +18,7 @@ interface Props {
    * @default 0
    */
   marginRight?: number;
+  onClick?: () => void;
 }
 
 export const IconButton = (props: Props) => {

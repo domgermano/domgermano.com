@@ -1,6 +1,8 @@
 export { Block } from "./Block";
 export { Button } from "./Button";
 export { Colored } from "./Colored";
+export { Contact } from "./Contact/Contact";
+export { ContactContext, ContactProvider } from "./Contact/ContactContext";
 export { Divider } from "./Divider";
 export { Flex, Box } from "./Flex";
 export { Footer } from "./Footer";
