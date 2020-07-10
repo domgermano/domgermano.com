@@ -14,50 +14,48 @@ import { ContactContext } from "./ContactContext";
 export const Contact = () => {
   /** Context hook access state and controller for the Contact panel */
   const contact = React.useContext(ContactContext);
-  if (contact.open === true) {
-    return (
-      <Aside>
-        <Content>
-          <CloseButton icon="/icons/close.png" onClick={contact.toggle} />
-          <Block>
-            <Spacer spacing={80} />
-            <Text kind="display">Get in touch</Text>
-            <Text kind="paragraph">
-              Feel free to reach out and say hi. Things I like to talk about
-              include Design, Disney movies and motorcycles.
-            </Text>
-            <form
-              name="Contact"
-              method="POST"
-              netlify-honeypot="cheekyRobots"
-              data-netlify="true"
-            >
-              <Input
-                name="Name"
-                placeholder="*NAME"
-                type="text"
-                required
-                autoFocus
-              />
-              <Input name="Email" placeholder="*EMAIL" type="email" required />
-              <TextArea name="Message" placeholder="*MESSAGE" required />
-              <HiddenInput
-                name="cheekyRobots"
-                type="text"
-                tabIndex={-1}
-                value=""
-                readOnly
-              />
-              <Button type="submit">Dispatch carrier pidgeon</Button>
-            </form>
-            <Spacer spacing={80} />
-          </Block>
-        </Content>
-        <Blockout />
-      </Aside>
-    );
-  }
-  return null;
+
+  return (
+    <Aside>
+      <Content>
+        <CloseButton icon="/icons/close.png" onClick={contact.toggle} />
+        <Block>
+          <Spacer spacing={80} />
+          <Text kind="display">Get in touch</Text>
+          <Text kind="paragraph">
+            Feel free to reach out and say hi. Things I like to talk about
+            include Design, Disney movies and motorcycles.
+          </Text>
+          <form
+            name="Contact"
+            method="POST"
+            netlify-honeypot="cheekyRobots"
+            data-netlify="true"
+          >
+            <Input
+              name="Name"
+              placeholder="*NAME"
+              type="text"
+              required
+              autoFocus
+            />
+            <Input name="Email" placeholder="*EMAIL" type="email" required />
+            <TextArea name="Message" placeholder="*MESSAGE" required />
+            <HiddenInput
+              name="cheekyRobots"
+              type="text"
+              tabIndex={-1}
+              value=""
+              readOnly
+            />
+            <Button type="submit">Dispatch carrier pidgeon</Button>
+          </form>
+          <Spacer spacing={80} />
+        </Block>
+      </Content>
+      <Blockout />
+    </Aside>
+  );
 };
 
 const fade = keyframes`
