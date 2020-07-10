@@ -39,7 +39,7 @@ export const Contact = () => {
               required
               autoFocus
             />
-            <Input name="Email" placeholder="*EMAIL" type="email" required />
+            <Input name="Email" placeholder="*EMAIL" type="text" required />
             <TextArea name="Message" placeholder="*MESSAGE" required />
             <HiddenInput
               name="cheekyRobots"
