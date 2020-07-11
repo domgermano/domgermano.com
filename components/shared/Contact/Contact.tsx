@@ -32,6 +32,8 @@ export const Contact = () => {
             netlify-honeypot="cheekyRobots"
             data-netlify="true"
           >
+            {/* Netlify requires us to manually add a "form-name" field because we are using react. https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
+            <input type="hidden" name="form-name" value="Contact" />
             <Input
               name="Name"
               placeholder="*NAME"
@@ -39,7 +41,7 @@ export const Contact = () => {
               required
               autoFocus
             />
-            <Input name="Email" placeholder="*EMAIL" type="text" required />
+            <Input name="Email" placeholder="*EMAIL" type="email" required />
             <TextArea name="Message" placeholder="*MESSAGE" required />
             <HiddenInput
               name="cheekyRobots"
