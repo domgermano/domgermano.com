@@ -4,27 +4,35 @@ import styled, { keyframes } from "styled-components";
 import { colors } from "styles/colors";
 import { typography } from "styles/typography";
 
-import { Block } from "../Block";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
-import { Spacer } from "../Spacer";
 import { Text } from "../Text";
 import { ContactContext } from "./ContactContext";
+
+/**
+ * CONTACT
+ *
+ * An sidebar with a contact form. I'm using Netlify's built-in form handling.
+ * Their build bots parse your form HTML directly at deploy time, so there's no
+ * need to make an API call. https://docs.netlify.com/forms/setup/
+ *
+ * Note: Includes a simple honeypot field for spam filtering.
+ *
+ */
 
 export const Contact = () => {
   /** Context hook access state and controller for the Contact panel */
   const contact = React.useContext(ContactContext);
 
   return (
-    <Aside>
+    <Aside open={contact.open}>
       <Content>
         <CloseButton icon="/icons/close.png" onClick={contact.toggle} />
-        <Block>
-          <Spacer spacing={80} />
+        <GetInTouch>
           <Text kind="display">Get in touch</Text>
           <Text kind="paragraph">
-            Feel free to reach out and say hi. Things I like to talk about
-            include Design, Disney movies and motorcycles.
+            Things I like to talk about include design, motorcycles and Disney
+            movies.
           </Text>
           <form
             name="Contact"
@@ -34,13 +42,7 @@ export const Contact = () => {
           >
             {/* Netlify requires us to manually add a "form-name" field because we are using react. https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
             <input type="hidden" name="form-name" value="Contact" />
-            <Input
-              name="Name"
-              placeholder="*NAME"
-              type="text"
-              required
-              autoFocus
-            />
+            <Input name="Name" placeholder="*NAME" type="text" required />
             <Input name="Email" placeholder="*EMAIL" type="email" required />
             <TextArea name="Message" placeholder="*MESSAGE" required />
             <HiddenInput
@@ -52,14 +54,15 @@ export const Contact = () => {
             />
             <Button type="submit">Dispatch carrier pidgeon</Button>
           </form>
-          <Spacer spacing={80} />
-        </Block>
+        </GetInTouch>
       </Content>
       <Blockout />
     </Aside>
   );
 };
 
+// KEYFRAMES
+// =============================================================================
 const fade = keyframes`
   from {
     opacity: 0;
@@ -78,7 +81,9 @@ const swipe = keyframes`
   }
 `;
 
-const Aside = styled.aside`
+// UI COMPONENTS
+// =============================================================================
+const Aside = styled.aside<{ open: boolean }>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -86,7 +91,7 @@ const Aside = styled.aside`
   right: 0;
   z-index: 2;
 
-  display: grid;
+  display: ${p => (p.open ? "grid" : "none")};
   grid-template-columns: 1.618fr 1fr;
 `;
 
@@ -103,6 +108,14 @@ const Content = styled.div`
 
   animation: ${swipe} 1s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+`;
+
+const GetInTouch = styled.div`
+  max-width: 800px;
+  padding: 80px 50px;
+  box-sizing: border-box;
+
+  margin: auto;
 `;
 
 const Blockout = styled.div`
@@ -146,7 +159,8 @@ const Input = styled.input`
 const TextArea = styled(Input).attrs(() => ({
   as: "textarea"
 }))`
-  min-height: 25vh;
+  height: 25vh;
+  min-height: 150px;
   resize: vertical;
   padding-right: 20px;
 `;

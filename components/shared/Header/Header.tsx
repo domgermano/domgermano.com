@@ -2,12 +2,24 @@ import * as React from "react";
 
 import { ContactContext } from "components/shared/Contact/ContactContext";
 import styled, { keyframes } from "styled-components";
+import { device } from "styles/device";
 
 import { Block } from "../Block";
 import { Box, Flex } from "../Flex";
 import { IconButton } from "../IconButton";
 import { Text } from "../Text";
 import { usePinnedHeader } from "./usePinnedHeader";
+
+/**
+ * HEADER
+ *
+ * External navigation links to my other profile pages, including Dribbble and
+ * GitHub.
+ *
+ * To maximise viewing space for the content of a web page, the header
+ * auto-hides on scroll.
+ *
+ */
 
 export const Header = () => {
   /** Custom hook to pin header on scroll */
@@ -45,6 +57,19 @@ export const Header = () => {
   );
 };
 
+// KEYFRAMES
+// =============================================================================
+const logoSprite = keyframes`
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -200px;
+  }
+`;
+
+// UI COMPONENTS
+// =============================================================================
 const Container = styled.header<{ pin: boolean }>`
   position: fixed;
   top: 0;
@@ -58,14 +83,9 @@ const Container = styled.header<{ pin: boolean }>`
   transition: transform 0.3s ease;
 
   z-index: 1;
-`;
 
-const sprite = keyframes`
-  from {
-    background-position: 0px;
-  }
-  to {
-    background-position: -200px;
+  @media screen and (${device.mobile}) {
+    height: 70px;
   }
 `;
 
@@ -78,5 +98,9 @@ const Logo = styled.div`
 
   margin-right: 20px;
 
-  animation: ${sprite} 10s steps(5) infinite;
+  animation: ${logoSprite} 10s steps(5) infinite;
+
+  @media screen and (${device.mobile}) {
+    display: none;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "styles/device";
 
 import { Box } from "./Flex";
 
@@ -10,4 +11,9 @@ export const Block = styled(Box)`
   padding-left: 50px;
   padding-right: 50px;
   box-sizing: border-box;
+
+  @media screen and (${device.mobile}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;

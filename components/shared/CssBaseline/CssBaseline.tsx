@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { colors } from "styles/colors";
+import { device } from "styles/device";
 
 import normalise from "./normalise";
 
@@ -12,6 +13,9 @@ export const CssBaseline = createGlobalStyle`
  
  html {
    font-size: 16px;
-   /* background: hsl(0, 15%, 95%); */
+
+   @media screen and (${device.tablet}) {
+    font-size: 14px;
+   }
  }
 `;
