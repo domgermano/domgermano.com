@@ -42,8 +42,20 @@ export const Contact = () => {
           >
             {/* Netlify requires us to manually add a "form-name" field because we are using react. https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
             <input type="hidden" name="form-name" value="Contact" />
-            <Input name="Name" placeholder="*NAME" type="text" required />
-            <Input name="Email" placeholder="*EMAIL" type="email" required />
+            <Input
+              name="Name"
+              placeholder="*NAME"
+              type="text"
+              required
+              spellCheck="false"
+            />
+            <Input
+              name="Email"
+              placeholder="*EMAIL"
+              type="email"
+              required
+              spellCheck="false"
+            />
             <TextArea name="Message" placeholder="*MESSAGE" required />
             <HiddenInput
               name="cheekyRobots"
@@ -133,10 +145,9 @@ const Input = styled.input`
   box-sizing: border-box;
   margin: 40px 0;
 
-  font-family: ${typography["system"].fontFamily};
-  font-weight: ${typography["system"].fontWeight};
-  line-height: ${typography["system"].lineHeight};
-  /* text-transform: ${typography["system"].textTransform}; */
+  font-family: ${typography["hand"].fontFamily};
+  font-weight: ${typography["hand"].fontWeight};
+  line-height: ${typography["hand"].lineHeight};
   letter-spacing: 2px;
   font-size: 1.5rem;
 
@@ -148,6 +159,9 @@ const Input = styled.input`
 
   &::placeholder {
     color: ${colors.grey300};
+    font-family: ${typography["system"].fontFamily};
+    font-weight: ${typography["system"].fontWeight};
+    line-height: ${typography["system"].lineHeight};
   }
 
   &:hover::placeholder,

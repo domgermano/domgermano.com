@@ -5,6 +5,7 @@ import {
   Colored,
   ContactContext,
   Divider,
+  Flex,
   Grid,
   Section,
   Spacer,
@@ -38,13 +39,20 @@ export const Introduction = () => {
         </GridRole>
         <GridDesc>
           <Text kind="paragraph">
-            I live and work in Melbourne, Australia. In my role as the first
-            creative member at an early startup, I've worn many hats. I consider
-            myself a design all-rounder, with experience working in UX and UI,
-            product strategy, front-end development and team operations.
+            I live and work in Melbourne, Australia and I consider myself to be
+            a design all-rounder. One of those generalists with a wide range of
+            experiences. As the first creative member at an early startup, I’ve
+            worked in UX and UI, product strategy, marketing, front-end
+            development and team management.
           </Text>
-          <Spacer spacing={20} />
-          <Button onClick={contact.toggle}>Get in touch</Button>
+          <Spacer spacing={40} />
+          <Flex align="center" justify="flex-end">
+            <HatsText kind="hand">
+              In other words,
+              <br /> I wear many hats
+            </HatsText>
+            <Button onClick={contact.toggle}>Get in touch</Button>
+          </Flex>
         </GridDesc>
         <GridVideo
           id="video"
@@ -56,18 +64,21 @@ export const Introduction = () => {
         />
         <GridStory>
           <Text kind="paragraph">
-            I’m not a vein person, I swear. But if you’re a designer like me,
-            you’ll probably appreciate challenging it can be to boost your NPS.
-            Creating and managing assessments shouldn't be hard, and it
-            definitely shouldn't be boring. We've spent the last few months
-            working on the Cadmus Teacher Environment, and we're excited to
-            share some brand new changes with you today.
-          </Text>
-          <Text kind="paragraph">
-            They're designed to make your assessment experience a little bit
-            nicer and a whole lot simpler. And the best part? It's all here in
-            time for your pre-semester setup. Let's take a look at what's new
-            We've updated the look and feel of the Teacher Environment.
+            In my role as the first creative member at an early startup, I've
+            worn many hats. I consider myself a design all-rounder, with
+            experience working in UX and UI, product strategy, front-end
+            development and team operations. I've had an amazing opportunity to
+            work in a talented, cross-functional team, where I learnt how
+            different perspectives combine to build great products. However, my
+            most rewarding achievement has been the culture I have fostered.
+            I've taught non-designers to appreciate and apply Design Thinking
+            principles and built a collaborative culture that champions user
+            experience. By delivering these experiences through quality
+            craftsmanship, we have created a product and brand that our users
+            and customers love — no small feat for a university assessment
+            platform. This success has reinforced my belief in the importance of
+            design in building successful products and businesses and has
+            continued to fuel my passion for working in cross-functional teams.
           </Text>
         </GridStory>
       </IntroGrid>
@@ -177,10 +188,21 @@ const GridDesc = styled.div`
   }
 `;
 
+const HatsText = styled(Text)`
+  transform: rotate(-2deg);
+  text-indent: -20px;
+  margin-right: 30px;
+
+  @media screen and (${device.tablet}) {
+    margin-right: 10px;
+    text-indent: 0;
+  }
+`;
+
 const GridVideo = styled.video`
   grid-area: vid;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 50px;
 
   min-height: 200px;
   object-fit: cover;

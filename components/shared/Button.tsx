@@ -8,7 +8,14 @@ import { typography } from "styles/typography";
  *
  */
 
-export const Button = styled.button`
+interface Props {
+  /** Optional left margin */
+  marginLeft?: number;
+  /** Optional right margin */
+  marginRight?: number;
+}
+
+export const Button = styled.button<Props>`
   font-family: ${typography["system"].fontFamily};
   font-size: ${typography["system"].fontSize};
   font-weight: ${typography["system"].fontWeight};
@@ -21,6 +28,9 @@ export const Button = styled.button`
   border-radius: 5px;
   box-sizing: border-radius;
   background: ${colors.orange200};
+
+  margin-left: ${p => (p.marginLeft ? p.marginLeft : 0)}px;
+  margin-right: ${p => (p.marginRight ? p.marginRight : 0)}px;
 
   cursor: pointer;
   outline: none;

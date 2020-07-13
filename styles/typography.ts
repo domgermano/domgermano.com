@@ -36,7 +36,7 @@ export const typography = {
     fontFamily: "felt-tip-roman",
     fontSize: "1rem",
     fontWeight: "400",
-    lineHeight: "1.4",
+    lineHeight: "1.8",
     paddingTop: "0px",
     paddingBottom: "0px",
     textTransform: "uppercase",
