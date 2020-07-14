@@ -64,21 +64,28 @@ export const Introduction = () => {
         />
         <GridStory>
           <Text kind="paragraph">
-            In my role as the first creative member at an early startup, I've
-            worn many hats. I consider myself a design all-rounder, with
-            experience working in UX and UI, product strategy, front-end
-            development and team operations. I've had an amazing opportunity to
-            work in a talented, cross-functional team, where I learnt how
-            different perspectives combine to build great products. However, my
-            most rewarding achievement has been the culture I have fostered.
-            I've taught non-designers to appreciate and apply Design Thinking
-            principles and built a collaborative culture that champions user
-            experience. By delivering these experiences through quality
-            craftsmanship, we have created a product and brand that our users
-            and customers love — no small feat for a university assessment
-            platform. This success has reinforced my belief in the importance of
-            design in building successful products and businesses and has
-            continued to fuel my passion for working in cross-functional teams.
+            Yep, that’s me. I never set out to be a digital designer. I actually
+            studied to become a Mechanical Engineer. Although I have a very
+            practical mind, I’ve always loved the fine detail and craftsmanship
+            of well designed products. While studying, I always figured I’d
+            combine my passions and become an automotive engineer or industrial
+            designer.
+          </Text>
+          <Text kind="paragraph">
+            It never occurred to me to go digital until after I graduated from
+            university. Friends of mine asked if I could design a logo for their
+            brand new startup. One thing lead to another, and pretty soon they
+            offered me a job “doing UX”. Of course I had no idea what that meant
+            at the time, but I accepted anyway.
+          </Text>
+          <Text kind="paragraph">
+            For the past 5 years I’ve been a student and teacher of digital
+            product design. I've had an amazing opportunity to work in a
+            talented, cross-functional team, where I learnt how different
+            perspectives combine to build great products. These days, I’m a big
+            believer that “designers should learn to code”, and the most
+            adaptable teams embed themselves and learn from other disciplines
+            within a business.
           </Text>
         </GridStory>
       </IntroGrid>
@@ -194,7 +201,7 @@ const HatsText = styled(Text)`
   margin-right: 30px;
 
   @media screen and (${device.tablet}) {
-    margin-right: 10px;
+    margin-right: 20px;
     text-indent: 0;
   }
 `;

@@ -14,7 +14,13 @@ import { Footer, Header, HtmlHead } from "components/shared";
 
 const Index = () => (
   <>
-    <HtmlHead videoSrc="/home/portrait.mp4" />
+    <HtmlHead
+      title="Dom — Digital Product Designer"
+      description="A design all-rounder. One of those generalists with a wide range of experiences. I’ve worked in UX and UI, product strategy, marketing, front-end development and team management."
+      videoSrc="/home/portrait.mp4"
+      url="https://domgermano.design"
+      type="website"
+    />
     <Header />
     <Introduction />
     <Footer />
