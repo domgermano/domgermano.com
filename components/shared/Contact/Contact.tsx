@@ -2,6 +2,7 @@ import * as React from "react";
 
 import styled, { keyframes } from "styled-components";
 import { colors } from "styles/colors";
+import { device } from "styles/device";
 import { typography } from "styles/typography";
 
 import { Button } from "../Button";
@@ -120,6 +121,10 @@ const Content = styled.div`
 
   animation: ${swipe} 1s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+
+  @media screen and (${device.tablet}) {
+    grid-column: 1 / span 2;
+  }
 `;
 
 const GetInTouch = styled.div`

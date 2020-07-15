@@ -71,14 +71,14 @@ export const Introduction = () => {
             combine my passions and become an automotive engineer or industrial
             designer.
           </Text>
-          <Text kind="paragraph">
+          <Text kind="paragraph" indent>
             It never occurred to me to go digital until after I graduated from
             university. Friends of mine asked if I could design a logo for their
             brand new startup. One thing lead to another, and pretty soon they
             offered me a job “doing UX”. Of course I had no idea what that meant
             at the time, but I accepted anyway.
           </Text>
-          <Text kind="paragraph">
+          <Text kind="paragraph" indent>
             For the past 5 years I’ve been a student and teacher of digital
             product design. I've had an amazing opportunity to work in a
             talented, cross-functional team, where I learnt how different

@@ -3,7 +3,10 @@ import { colors } from "styles/colors";
 import { Typography, typography } from "styles/typography";
 
 interface Props {
+  /** Typography kind */
   kind: Typography;
+  /** Optional indent */
+  indent?: boolean;
 }
 
 const textColor = (props: Props) => {
@@ -34,6 +37,8 @@ export const Text = styled.span.attrs((props: Props) => ({
   padding-bottom: ${p => typography[p.kind].paddingBottom};
   text-transform: ${p => typography[p.kind].textTransform};
   letter-spacing: ${p => typography[p.kind].letterSpacing};
+
+  text-indent: ${p => (p.indent ? "2em" : "initial")};
 
   ${textColor}
 
