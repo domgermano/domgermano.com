@@ -43,4 +43,7 @@ export const Text = styled.span.attrs((props: Props) => ({
   ${textColor}
 
   margin: 0;
+
+  /* Relative positioning for Hat placement */
+  position: relative;
 `;

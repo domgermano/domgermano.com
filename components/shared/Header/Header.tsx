@@ -82,7 +82,7 @@ const Container = styled.header<{ pin: boolean }>`
   transform: ${p => (p.pin ? "translateY(0px)" : "translateY(-100px)")};
   transition: transform 0.3s ease;
 
-  z-index: 1;
+  z-index: 10;
 
   @media screen and (${device.mobile}) {
     height: 70px;

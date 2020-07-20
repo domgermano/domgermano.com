@@ -7,6 +7,7 @@ export { Divider } from "./Divider";
 export { Flex, Box } from "./Flex";
 export { Footer } from "./Footer";
 export { Grid } from "./Grid";
+export { Hat } from "./Hat";
 export { Header } from "./Header/Header";
 export { HtmlHead } from "./HtmlHead";
 export { IconButton } from "./IconButton";
