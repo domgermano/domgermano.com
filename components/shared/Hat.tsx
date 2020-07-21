@@ -1,16 +1,15 @@
 import styled, { css } from "styled-components";
+import { device } from "styles/device";
 
 interface Props {
   /** Type of hat */
   hat: "captian" | "cap" | "hard" | "chef" | "party";
-  /** Right absolute positioning in px */
-  right?: number;
-  /** Top absolute positioning in px */
-  top?: number;
-  /** Right absolute positioning in px */
-  left?: number;
-  /** Top absolute positioning in px */
-  bottom?: number;
+  /** Optional absolute position in the format [top, left] */
+  position?: number[];
+  /** Optional absolute position for a tablet */
+  tablet?: number[];
+  /** Optional absolute position for a mobile */
+  mobile?: number[];
   /** Optional rotation */
   rotate?: number;
 }
@@ -42,9 +41,17 @@ export const Hat = styled.span<Props>`
   background-repeat: no-repeat;
 
   ${hatSelector};
-  right: ${p => (p.right ? `${p.right}px` : "initial")};
-  top: ${p => (p.top ? `${p.top}px` : "initial")};
-  left: ${p => (p.left ? `${p.left}px` : "initial")};
-  bottom: ${p => (p.bottom ? `${p.bottom}px` : "initial")};
-  transform: ${p => (p.rotate ? `rotate(${p.rotate}deg)` : "initial")};
+  top: ${p => (p.position ? `${p.position[0]}px` : "unset")};
+  left: ${p => (p.position ? `${p.position[1]}px` : "unset")};
+  transform: ${p => (p.rotate ? `rotate(${p.rotate}deg)` : "unset")};
+
+  @media screen and (${device.tablet}) {
+    top: ${p => (p.tablet ? `${p.tablet[0]}px` : "unset")};
+    left: ${p => (p.tablet ? `${p.tablet[1]}px` : "unset")};
+  }
+
+  @media screen and (${device.mobile}) {
+    top: ${p => (p.mobile ? `${p.mobile[0]}px` : "unset")};
+    left: ${p => (p.mobile ? `${p.mobile[1]}px` : "unset")};
+  }
 `;

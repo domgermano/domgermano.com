@@ -102,7 +102,7 @@ const Aside = styled.aside<{ open: boolean }>`
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 100;
 
   display: ${p => (p.open ? "grid" : "none")};
   grid-template-columns: 1.618fr 1fr;
@@ -113,7 +113,7 @@ const Content = styled.div`
   grid-row: 1;
   width: 100%;
   min-width: 360px;
-  z-index: 2;
+  z-index: 1;
   border-right: 1px solid ${colors.grey500};
   overflow-y: auto;
 
