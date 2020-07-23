@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Design, Introduction } from "components/home";
+import { More } from "components/more";
 import { Footer, Header, HtmlHead } from "components/shared";
 
 /**
@@ -24,6 +25,7 @@ const Index = () => (
     <Header />
     <Introduction />
     <Design />
+    <More />
     <Footer />
   </>
 );
