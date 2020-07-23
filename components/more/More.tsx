@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Button, Grid, Hat, Section, Spacer, Text } from "components/shared";
+import { Grid, Hat, Section, Spacer, Text } from "components/shared";
 import styled from "styled-components";
 import { device } from "styles/device";
 
