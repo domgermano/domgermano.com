@@ -16,7 +16,7 @@ interface Props {
 
 const hatSelector = (props: Props) => {
   switch (props.hat) {
-    case "cap":
+    case "captain":
       return css`
         background-position: -40px;
       `;

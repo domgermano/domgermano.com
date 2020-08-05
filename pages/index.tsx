@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Design, Introduction } from "components/home";
+import { Design, Introduction, Leadership } from "components/home";
 import { More } from "components/more";
 import { Footer, Header, HtmlHead } from "components/shared";
 
@@ -24,6 +24,7 @@ const Index = () => (
     />
     <Header />
     <Introduction />
+    <Leadership />
     <Design />
     <More />
     <Footer />
