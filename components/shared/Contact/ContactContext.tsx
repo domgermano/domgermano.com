@@ -23,7 +23,7 @@ export const ContactContext = React.createContext<ContextProps>({
 });
 
 /**
- * The Provider for the the ContactContext
+ * The Provider for the ContactContext
  */
 export const ContactProvider: React.FC = props => {
   const [open, setOpen] = React.useState(false);
