@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { device } from "styles/device";
 
-import { Box } from "./Flex";
-
-export const Block = styled(Box)`
+export const Block = styled.div`
   width: 100%;
   max-width: 1380px;
   margin-left: auto;
