@@ -30,8 +30,13 @@ export const Header = () => {
 
   return (
     <Container pin={contact.open === true ? false : pin}>
-      <Block height="100%">
-        <Flex width="100%" height="100%" align="center" justify="space-between">
+      <Block>
+        <Flex
+          width="100%"
+          height="100px"
+          align="center"
+          justify="space-between"
+        >
           <Box>
             <Flex align="center">
               <Logo />
@@ -74,7 +79,6 @@ const Container = styled.header<{ pin: boolean }>`
   position: fixed;
   top: 0;
   width: 100%;
-  height: 100px;
 
   background: hsla(0, 0%, 100%, 0.9);
   backdrop-filter: blur(8px);
