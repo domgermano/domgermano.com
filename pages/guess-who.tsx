@@ -14,34 +14,86 @@ import { colors } from "styles/colors";
 
 // Board initialisation
 let initialiseBoard = [
-  { name: "Aaliyah", src: "https://placehold.it/200x440", flipped: false },
-  { name: "Isaiah", src: "https://placehold.it/200x441", flipped: false },
-  { name: "Ida", src: "https://placehold.it/200x442", flipped: false },
-  { name: "Ricky", src: "https://placehold.it/200x443", flipped: false },
-  { name: "Petunia", src: "https://placehold.it/200x444", flipped: false },
-  { name: "Isabella", src: "https://placehold.it/200x445", flipped: false },
-  { name: "Meryl", src: "https://placehold.it/200x446", flipped: false },
-  { name: "Marlon", src: "https://placehold.it/200x447", flipped: false },
-  { name: "Harley", src: "https://placehold.it/200x448", flipped: false },
-  { name: "Lana", src: "https://placehold.it/200x449", flipped: false },
   {
-    name: "Jean-Claude",
-    src: "https://placehold.it/201x440.png",
+    name: "Aaliyah",
+    src: "/guess-who/Aaliyah.png",
     flipped: false
   },
-  { name: "Regina", src: "https://placehold.it/202x440", flipped: false },
-  { name: "Xander", src: "https://placehold.it/203x440", flipped: false },
-  { name: "Remy", src: "https://placehold.it/204x440", flipped: false },
-  { name: "Otis", src: "https://placehold.it/205x440", flipped: false },
-  { name: "Alfredo", src: "https://placehold.it/206x440", flipped: false },
-  { name: "Solomon", src: "https://placehold.it/207x440", flipped: false },
-  { name: "Violet", src: "https://placehold.it/208x440", flipped: false },
-  { name: "Axel", src: "https://placehold.it/209x440", flipped: false },
-  { name: "Zivah", src: "https://placehold.it/201x441", flipped: false },
-  { name: "Bernard", src: "https://placehold.it/201x442", flipped: false },
-  { name: "Zara", src: "https://placehold.it/201x443", flipped: false },
-  { name: "Wilfred", src: "https://placehold.it/201x444", flipped: false },
-  { name: "Yves", src: "https://placehold.it/201x445", flipped: false }
+  {
+    name: "Isaiah",
+    src: "/guess-who/Isaiah.png",
+    flipped: false
+  },
+  { name: "Ida", src: "/guess-who/Ida.png", flipped: false },
+  { name: "Ricky", src: "/guess-who/Ricky.png", flipped: false },
+  {
+    name: "Petunia",
+    src: "/guess-who/Petunia.png",
+    flipped: false
+  },
+  {
+    name: "Isabella",
+    src: "/guess-who/Isabella.png",
+    flipped: false
+  },
+  { name: "Meryl", src: "/guess-who/Meryl.png", flipped: false },
+  {
+    name: "Marlon",
+    src: "/guess-who/Marlon.png",
+    flipped: false
+  },
+  {
+    name: "Harley",
+    src: "/guess-who/Harley.png",
+    flipped: false
+  },
+  { name: "Lana", src: "/guess-who/Lana.png", flipped: false },
+  {
+    name: "Jean-Claude",
+    src: "/guess-who/Jean-Claude.png",
+    flipped: false
+  },
+  {
+    name: "Regina",
+    src: "/guess-who/Regina.png",
+    flipped: false
+  },
+  {
+    name: "Xander",
+    src: "/guess-who/Xander.png",
+    flipped: false
+  },
+  { name: "Remy", src: "/guess-who/Remy.png", flipped: false },
+  { name: "Otis", src: "/guess-who/Otis.png", flipped: false },
+  {
+    name: "Alfredo",
+    src: "/guess-who/Alfredo.png",
+    flipped: false
+  },
+  {
+    name: "Solomon",
+    src: "/guess-who/Solomon.png",
+    flipped: false
+  },
+  {
+    name: "Violet",
+    src: "/guess-who/Violet.png",
+    flipped: false
+  },
+  { name: "Axel", src: "/guess-who/Axel.png", flipped: false },
+  { name: "Zivah", src: "/guess-who/Zivah.png", flipped: false },
+  {
+    name: "Bernard",
+    src: "/guess-who/Bernard.png",
+    flipped: false
+  },
+  { name: "Zara", src: "/guess-who/Zara.png", flipped: false },
+  {
+    name: "Wilfred",
+    src: "/guess-who/Wilfred.png",
+    flipped: false
+  },
+  { name: "Yves", src: "/guess-who/Yves.png", flipped: false }
 ];
 
 // First shuffle
@@ -171,10 +223,10 @@ const Hover = styled.div`
   transition: transform 0.6s ease, opacity 0.6s ease;
 `;
 
-const CaracterImg = styled.div<{ src: string; flipped: boolean }>`
+const CaracterImg = styled.div<{ src?: string; flipped: boolean }>`
   display: block;
   width: 100%;
-  padding-bottom: 112.5%;
+  padding-bottom: 110%;
   background-image: url(${p => p.src});
   background-size: 100%;
   background-repeat: no-repeat;
