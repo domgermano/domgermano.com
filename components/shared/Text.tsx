@@ -7,6 +7,8 @@ interface Props {
   kind: Typography;
   /** Optional indent */
   indent?: boolean;
+  /** Optional indent */
+  textAlign?: "left" | "center" | "right" | "justify";
 }
 
 const textColor = (props: Props) => {
@@ -39,6 +41,7 @@ export const Text = styled.span.attrs((props: Props) => ({
   letter-spacing: ${p => typography[p.kind].letterSpacing};
 
   text-indent: ${p => (p.indent ? "2em" : "initial")};
+  text-align: ${p => (p.textAlign ? p.textAlign : "initial")};
 
   ${textColor}
 
