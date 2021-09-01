@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Button, HtmlHead, Spacer, Text } from "components/shared";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 
@@ -12,8 +13,8 @@ import { colors } from "styles/colors";
  *   - Safari testing
  */
 
-// Board initialisation
-let initialiseBoard = [
+// Cast
+const newCast = [
   {
     name: "Aaliyah",
     src: "/guess-who/Aaliyah.png",
@@ -96,6 +97,89 @@ let initialiseBoard = [
   { name: "Yves", src: "/guess-who/Yves.png", flipped: false }
 ];
 
+const originalCast = [
+  {
+    name: "Sam",
+    src: "/guess-who/original/Sam.jpg",
+    flipped: false
+  },
+  {
+    name: "Alex",
+    src: "/guess-who/original/Alex.jpg",
+    flipped: false
+  },
+  { name: "Peter", src: "/guess-who/original/Peter.jpg", flipped: false },
+  { name: "Maria", src: "/guess-who/original/Maria.jpg", flipped: false },
+  {
+    name: "Anne",
+    src: "/guess-who/original/Anne.jpg",
+    flipped: false
+  },
+  {
+    name: "Claire",
+    src: "/guess-who/original/Claire.jpg",
+    flipped: false
+  },
+  { name: "Philip", src: "/guess-who/original/Philip.jpg", flipped: false },
+  {
+    name: "Alfred",
+    src: "/guess-who/original/Alfred.jpg",
+    flipped: false
+  },
+  {
+    name: "Bill",
+    src: "/guess-who/original/Bill.jpg",
+    flipped: false
+  },
+  { name: "Herman", src: "/guess-who/original/Herman.jpg", flipped: false },
+  {
+    name: "Anita",
+    src: "/guess-who/original/Anita.jpg",
+    flipped: false
+  },
+  {
+    name: "Paul",
+    src: "/guess-who/original/Paul.jpg",
+    flipped: false
+  },
+  {
+    name: "Frans",
+    src: "/guess-who/original/Frans.jpg",
+    flipped: false
+  },
+  { name: "Max", src: "/guess-who/original/Max.jpg", flipped: false },
+  { name: "Richard", src: "/guess-who/original/Richard.jpg", flipped: false },
+  {
+    name: "Bernard",
+    src: "/guess-who/original/Bernard.jpg",
+    flipped: false
+  },
+  {
+    name: "Robert",
+    src: "/guess-who/original/Robert.jpg",
+    flipped: false
+  },
+  {
+    name: "Susan",
+    src: "/guess-who/original/Susan.jpg",
+    flipped: false
+  },
+  { name: "Charles", src: "/guess-who/original/Charles.jpg", flipped: false },
+  {
+    name: "David",
+    src: "/guess-who/original/David.jpg",
+    flipped: false
+  },
+  { name: "Tom", src: "/guess-who/original/Tom.jpg", flipped: false },
+  {
+    name: "Joe",
+    src: "/guess-who/original/Joe.jpg",
+    flipped: false
+  },
+  { name: "George", src: "/guess-who/original/George.jpg", flipped: false },
+  { name: "Eric", src: "/guess-who/original/Eric.jpg", flipped: false }
+];
+
 // First shuffle
 const shuffle = () => Math.floor(Math.random() * Math.floor(24));
 
@@ -103,10 +187,27 @@ const shuffle = () => Math.floor(Math.random() * Math.floor(24));
  * Guess who
  */
 const GuessWho = () => {
+  // Fetching query param for the game mode
+  const router = useRouter();
+  const mode = router.query.mode as string;
+
+  // Board initialisation
+  let initialiseBoard: { name: string; src: string; flipped: boolean }[];
+  switch (mode) {
+    case "original":
+      initialiseBoard = originalCast;
+      break;
+    default:
+      initialiseBoard = newCast;
+      break;
+  }
+
   // Setting states for the board and the game
   const [board, setBoard] = React.useState(initialiseBoard);
   const [count, setCount] = React.useState(24);
   const [newCard, setNewCard] = React.useState(shuffle);
+  const guessCard = initialiseBoard[newCard];
+
   // const [resize, setResize] = React.useState(false);
 
   // A function to update the board. Sets a character flipped state and updates
@@ -148,8 +249,8 @@ const GuessWho = () => {
               <Spacer spacing={10} />
               <CharacterContainer>
                 <Character
-                  name={initialiseBoard[newCard].name}
-                  src={initialiseBoard[newCard].src}
+                  name={guessCard.name}
+                  src={guessCard.src}
                   flipped={false}
                 />
               </CharacterContainer>
@@ -231,6 +332,7 @@ const CaracterImg = styled.div<{ src?: string; flipped: boolean }>`
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: ${p => (p.flipped ? "0% 100%" : "0% 0%")};
+  border-radius: 10px;
 
   position: relative;
   z-index: 2;
