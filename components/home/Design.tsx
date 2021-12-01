@@ -16,13 +16,7 @@ export const Design = () => {
         <GridTitle>
           <TextContainer>
             <Text kind="display">UI & UX</Text>
-            <Hat
-              hat="cap"
-              position={[0, 3]}
-              tablet={[0, 11]}
-              mobile={[0, 106]}
-              rotate={-30}
-            />
+            <Hat hat="cap" position={[-1, -12]} rotate={-30} />
           </TextContainer>
           <IconButton
             icon="/icons/previous.png"
